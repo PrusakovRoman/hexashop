@@ -28,14 +28,14 @@ class Router
           if (PROD) {
             include 'app/views/404/index.php';
           } else {
-            var_dump('Метод' . $action_name . 'не существует');
+            var_dump('Метод ' . $action_name . ' не существует');
           }
         }
       } else {
         if (PROD) {
           include 'app/views/404/index.php';
         } else {
-          var_dump('Класс' . $controller_class . 'не существует');
+          var_dump('Класс ' . $controller_class . ' не существует');
         }
       }
     } else {
