@@ -8,6 +8,10 @@ class MainController extends Controller
 {
   public function index_action()
   {
-    $this->view->render();
+    $categories = $this->model->get_categories();
+
+    $data = compact('categories');
+
+    $this->view->render((object) $data);
   }
 }
