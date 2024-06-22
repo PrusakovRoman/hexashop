@@ -35,4 +35,18 @@ class Db
     $stmt->execute();
     return $stmt->fetchAll(\PDO::FETCH_OBJ);
   }
+
+  public function fetch_one($table, $id)
+  {
+    $stmt = $this->db->prepare("SELECT * FROM {$table} WHERE id={$id}");
+    $stmt->execute();
+    return $stmt->fetch(\PDO::FETCH_OBJ);
+  }
+
+  public function custom_query($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+  }
 }
